@@ -2,7 +2,7 @@
     "settings": {
         "language": "en",
         "F1 mode": true,
-        "debug mode": true
+        "debug mode": false
     },
     "Custom Levels": {
         "list": [],
