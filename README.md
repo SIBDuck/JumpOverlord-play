@@ -24,11 +24,13 @@ Read full documentation: [Documentation](Documentation.md)
 
 Adding a custom level is super easy! Here's how:
 
-**Option 1: Using a `.txt` file**
-Just write your level map in a text file using the symbols supported by the game. Check the [GitHub page](https://github.com/SIBDuck/JumpOverlord/) for the full list of symbols you can use.
+- Check the [GitHub page](https://github.com/SIBDuck/JumpOverlord-play/blob/main/objects/supported%20objects.md) for the full list of symbols you can use.
 
-**Option 2: Using a `.json` file**
-Create a JSON file with a `"map"` key. The value should be a list of strings, where each string represents one row of your level.
+#### **Option 1: Using a `.txt` file**
+- Just write your level map in a text file using the symbols supported by the game. 
+
+#### **Option 2: Using a `.json` file**
+- Create a JSON file with a `"map"` key. The value should be a list of strings, where each string represents one row of your level.
 
 Once your file is ready, just load it in the game and you're good to go!
 
