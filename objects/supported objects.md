@@ -2,7 +2,8 @@
 Other objects will be supported soon!
 
 `objects.json`
-```{
+```
+{
         "#": "wall", # Supported
         "e": "enemy",
         "t": "turret",
