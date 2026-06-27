@@ -81,46 +81,46 @@
 ## 📁 Структура Проекта
 ### JumpOverlord
 ```
-JumpOverlord/ # Корневая папка проекта
+JumpOverlord/                     # Корневая папка проекта
 │
-├── Main.py # Главный файл игры (точка входа)
-├── Main.spec # Конфигурация PyInstaller (сборка .exe)
-├── Main.exe # Главный файл игры
+├── Main.py                       # Главный файл игры (точка входа)
+├── Main.spec                     # Конфигурация PyInstaller (сборка .exe)
+├── Main.exe                      # Исполняемый файл игры
 │
-├── objects/ # Игровые объекты (поддерживаемые, .json)
-│ ├── supported objects.md
-│ └── objects.json
+├── objects/                      # Игровые объекты (поддерживаемые, .json)
+│   ├── supported objects.md
+│   └── objects.json
 │
-├── player data/ # Данные игрока
-│ └── data.json
+├── player data/                  # Данные игрока
+│   └── data.json
 │
-├── images/ # Изображения (текстуры, кнопки, флаги, фон)
-├── level signs/ # Таблички уровней
-├── levels/ # ASCII-уровни (.txt, .json)
-├── fonts/ # Шрифты (OpenSans)
-├── pleft/ # Спрайты игрока (движение влево)
-├── pright/ # Спрайты игрока (движение вправо)
+├── images/                       # Изображения (текстуры, кнопки, флаги, фон)
+├── level signs/                  # Таблички уровней
+├── levels/                       # Файлы уровней (.txt, .json)
+├── fonts/                        # Шрифты (OpenSans)
+├── pleft/                        # Спрайты игрока (движение влево)
+├── pright/                       # Спрайты игрока (движение вправо)
 │
-├── Documentation_screens/ # Скриншоты кода (5 приложений)
-│ ├── Appendix_1/
-│ ├── Appendix_2/
-│ ├── Appendix_3/
-│ ├── Appendix_4/
-│ └── Appendix_5/
+├── Documentation_screens/        # Скриншоты кода (5 приложений)
+│   ├── Appendix_1/
+│   ├── Appendix_2/
+│   ├── Appendix_3/
+│   ├── Appendix_4/
+│   └── Appendix_5/
 │
-├── Custom Levels/ # Кастомные уровни
+├── Custom Levels/                # Кастомные уровни
 │
-├── screenshots_gifs/ # Скриншоты и гифки для README
+├── screenshots_gifs/             # Скриншоты и гифки для README
 │
-├── .gitignore # Игнорируемые файлы (build/, dist/, .idea/, и т.д.)
+├── .gitignore                    # Игнорируемые файлы (build/, dist/, .idea/, и т.д.)
 │
-├── README.md # Описание проекта (Английский)
-├── README.ru.md # Описание проекта (Русский)
+├── README.md                     # Описание проекта (Английский)
+├── README.ru.md                  # Описание проекта (Русский)
 │
-├── DOCUMENTATION.md # Полная документация (Английский)
-├── DOCUMENTATION.ru.md # Полная документация (Русский)
+├── DOCUMENTATION.md              # Полная документация (Английский)
+├── DOCUMENTATION.ru.md           # Полная документация (Русский)
 │
-├── LICENSE # Лицензия MIT
+├── LICENSE                       # Лицензия MIT
 ```
 ## 🙏 Спасибо
 - Python, Pygame

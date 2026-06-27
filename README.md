@@ -77,46 +77,46 @@ Once your file is ready, just load it in the game and you're good to go!
 ## 📁 Project Structure
 ### JumpOverlord
 ```
-JumpOverlord/ # Project root folder
-│                 
-├── Main.py # Main game file (entry point)
-├── Main.spec # PyInstaller config (.exe build)
-├── Main.exe # Main game app
+JumpOverlord/                     # Project root folder
 │
-├── objects/ # Game objects (supported ones, .json)
+├── Main.py                       # Main game file (entry point)
+├── Main.spec                     # PyInstaller config (.exe build)
+├── Main.exe                      # Main game executable
+│
+├── objects/                      # Game objects (supported ones, .json)
 │   ├── supported objects.md
 │   └── objects.json
 │
-├── player data/ # Player data
+├── player data/                  # Player data
 │   └── data.json
 │
-├── images/ # Images (textures, buttons, flags, background)
-├── level signs/ # Level signs
-├── levels/ # ASCII level files (.txt, .json)
-├── fonts/ # Fonts (OpenSans)
-├── pleft/ # Player sprites (left movement)
-├── pright/ # Player sprites (right movement)
+├── images/                       # Images (textures, buttons, flags, background)
+├── level signs/                  # Level signs
+├── levels/                       # Level files (.txt, .json)
+├── fonts/                        # Fonts (OpenSans)
+├── pleft/                        # Player sprites (left movement)
+├── pright/                       # Player sprites (right movement)
 │
-├── Documentation_screens/ # Code screenshots (5 appendices)
+├── Documentation_screens/        # Code screenshots (5 appendices)
 │   ├── Appendix_1/
 │   ├── Appendix_2/
 │   ├── Appendix_3/
 │   ├── Appendix_4/
 │   └── Appendix_5/
 │
-├── Custom Levels/ # Custom levels
+├── Custom Levels/                # Custom levels
 │
-├── screenshots_gifs/ # Screenshots and GIFs for README
+├── screenshots_gifs/             # Screenshots and GIFs for README
 │
-├── .gitignore # Ignored files (build/, dist/, .idea/, etc.)
+├── .gitignore                    # Ignored files (build/, dist/, .idea/, etc.)
 │
-├── README.md # Project description (English)
-├── README.ru.md # Project description (Russian)
+├── README.md                     # Project description (English)
+├── README.ru.md                  # Project description (Russian)
 │
-├── DOCUMENTATION.md # Full documentation (English)
-├── DOCUMENTATION.ru.md # Full documentation (Russian)
+├── DOCUMENTATION.md              # Full documentation (English)
+├── DOCUMENTATION.ru.md           # Full documentation (Russian)
 │
-├── LICENSE # MIT License
+├── LICENSE                       # MIT License
 ```
 ## 🙏 Thanks
 - Python, Pygame
