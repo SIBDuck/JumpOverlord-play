@@ -5,7 +5,7 @@ Read this in other languages: [Russian/Русский](README.ru.md)
 
 Read full documentation: [Documentation](Documentation.md)
 
-- **One playable level** (more coming soon)
+- **Two playable levels** (more coming soon)
 - **Dual language** - English and Russian
 
 ## Mechanics
@@ -15,6 +15,22 @@ Read full documentation: [Documentation](Documentation.md)
 - **Death menu**
 - **Victory menu**
 - **Debug mode** - show hitboxes (enable in settings)
+
+- 🆕 **Custom Levels** — you can add and play custom levels using `.txt` and `.json` files
+- 🆕 Settings auto-save — your language, fullscreen mode, and debug mode preferences are saved and loaded automatically when you restart the game.
+- 🆕 FPS counter — shows framerate (enable in Debug mode)
+
+### How to Add Your Own Level?
+
+Adding a custom level is super easy! Here's how:
+
+**Option 1: Using a `.txt` file**
+Just write your level map in a text file using the symbols supported by the game. Check the [GitHub page](https://github.com/SIBDuck/JumpOverlord/) for the full list of symbols you can use.
+
+**Option 2: Using a `.json` file**
+Create a JSON file with a `"map"` key. The value should be a list of strings, where each string represents one row of your level.
+
+Once your file is ready, just load it in the game and you're good to go!
 
 ## Controls
 - A/D - movement
@@ -33,52 +49,72 @@ Read full documentation: [Documentation](Documentation.md)
 ![Gameplay GIF](images/game.gif)
 
 ## Installation
-1. Download `SIBGames.zip` 
+1. Download `JumpOverlord.zip` 
 2. Unzip the file
-3. Open `SIBGames/pythonProject/`
+3. Open `JumpOverlord/`
 4. Run `Main.exe` (no Python installation required)
 
-## Requirements 
-- **OS:** Windows 10/11
-- **CPU:** 1.5 GHz
-- **RAM:** 512 MB
-- **GPU:** Any (DirectX 9 compatible)
-- **Disk space:** 189 MB
+## System Requirements
+
+### Minimum:
+- **OS:** Windows 10 / 11 (64-bit)
+- **Processor:** 1.5 GHz
+- **RAM:** 256 MB
+- **Graphics:** DirectX 9 or OpenGL 2.0 compatible
+- **Storage:** 200 MB available space
+- **Display:** 640x360 (scales to any resolution)
+
+### Recommended:
+- **OS:** Windows 10 / 11 (64-bit)
+- **Processor:** 2.0 GHz (dual-core)
+- **RAM:** 512 MB+
+- **Graphics:** OpenGL 3.0 compatible
+- **Storage:** 200 MB+ available space
+- **Display:** 1920x1080 (fullscreen supported)
 
 ## 📁 Project Structure
 ### JumpOverlord
 ```
-SIBGames/
+JumpOverlord/ # Project root folder
+│                 
+├── Main.py # Main game file (entry point)
+├── Main.spec # PyInstaller config (.exe build)
+├── Main.exe # Main game app
 │
-├── pythonProject/                    # Project root folder
-│   ├── Main.py                       # Main game file (entry point)
-│   ├── Main.spec                     # PyInstaller config (.exe build)
-│   ├── objects.json                  # Game objects
-│   │
-│   ├── images/                       # Images (textures, buttons, flags, background)
-│   ├── levels/                       # ASCII level files (.txt)
-│   ├── fonts/                        # Fonts (OpenSans)
-│   ├── pleft/                        # Player sprites (left movement)
-│   └── pright/                       # Player sprites (right movement)
+├── objects/ # Game objects (supported ones, .json)
+│   ├── supported objects.md
+│   └── objects.json
 │
-├── Documentation_screens/            # Code screenshots (5 appendices)
+├── player data/ # Player data
+│   └── data.json
+│
+├── images/ # Images (textures, buttons, flags, background)
+├── level signs/ # Level signs
+├── levels/ # ASCII level files (.txt, .json)
+├── fonts/ # Fonts (OpenSans)
+├── pleft/ # Player sprites (left movement)
+├── pright/ # Player sprites (right movement)
+│
+├── Documentation_screens/ # Code screenshots (5 appendices)
 │   ├── Appendix_1/
 │   ├── Appendix_2/
 │   ├── Appendix_3/
 │   ├── Appendix_4/
 │   └── Appendix_5/
 │
-├── screenshots_gifs/                 # Screenshots and GIFs for README
+├── Custom Levels/ # Custom levels
 │
-├── .gitignore                        # Ignored files (build/, dist/, .idea/, etc.)
+├── screenshots_gifs/ # Screenshots and GIFs for README
 │
-├── README.md                         # Project description (English)
-├── README.ru.md                      # Project description (Russian)
+├── .gitignore # Ignored files (build/, dist/, .idea/, etc.)
 │
-├── DOCUMENTATION.md                  # Full documentation (English)
-├── DOCUMENTATION.ru.md               # Full documentation (Russian)
+├── README.md # Project description (English)
+├── README.ru.md # Project description (Russian)
 │
-├── LICENSE                           # MIT License
+├── DOCUMENTATION.md # Full documentation (English)
+├── DOCUMENTATION.ru.md # Full documentation (Russian)
+│
+├── LICENSE # MIT License
 ```
 ## 🙏 Thanks
 - Python, Pygame
