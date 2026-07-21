@@ -1,5 +1,11 @@
+#Copyright (C) 2026 SIBDuck <292766661+SIBDuck@users.noreply.github.com>
+#Licensed under the MIT License.
+#See LICENSE file in the project root for full license details.
+
+
+
 # Constants are written in CapsLock
-from operator import truediv
+#from operator import truediv
 
 import pygame
 import json
@@ -1224,8 +1230,6 @@ if os.path.exists("Custom Levels"):
 else:
     os.mkdir("Custom Levels")
     custom_levels = []
-
-
 
 running = True
 while running:
