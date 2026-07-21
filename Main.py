@@ -1,4 +1,4 @@
-#Copyright (C) 2026 SIBDuck <292766661+SIBDuck@users.noreply.github.com>
+#Copyright (C) 2026 SIBDuck
 #Licensed under the MIT License.
 #See LICENSE file in the project root for full license details.
 
