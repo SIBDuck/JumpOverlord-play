@@ -358,10 +358,7 @@ class Player:
 
         # Reset to idle animation frame
         if not is_go:
-            if self.direction == "right":
-                self.animation_index = 0
-            else:
-                self.animation_index = 0
+            self.animation_index = 0
 
         player_rect = self.get_rect()
         wall_collision = False
