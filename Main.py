@@ -17,11 +17,13 @@ import winsound
 import shutil
 import pathlib
 import os
+import random
 
 FPS = 60
 SCREEN_WIDTH = 640
 SCREEN_HEIGHT = 360
 TILE_SIZE = 64
+
 
 
 coin = 0  # Create coin counter
@@ -340,10 +342,11 @@ class Player:
 
         if keys[pygame.K_a] or keys[pygame.K_d]:
             # Update animation timer and cycle through running frames (0 to 3)
+
             self.animation_timer += 1
-            if self.animation_timer >= 5:
+            if self.animation_timer >= 8:
                 self.animation_index = (
-                                               self.animation_index + 1) % 4
+                                               self.animation_index + 1) % 7
                 self.animation_timer = 0
 
         if not (keys[pygame.K_a] or keys[pygame.K_d]):
@@ -351,16 +354,14 @@ class Player:
 
         if is_jump:
             is_go = True
-            if self.direction == "right":
-                self.animation_index = 0
-            else:
-                self.animation_index = 3
+            self.animation_index = 2
+
         # Reset to idle animation frame
         if not is_go:
             if self.direction == "right":
-                self.animation_index = 1
+                self.animation_index = 0
             else:
-                self.animation_index = 2
+                self.animation_index = 0
 
         player_rect = self.get_rect()
         wall_collision = False
@@ -468,10 +469,18 @@ class Player:
         screen_y = self.y - camera_y - self.SPRITE_OFFSET_Y  # Calculate screen player Y coordinate
 
         if self.direction == "right":
-            current_frame = player_right[self.animation_index % len(player_right)]
+            #current_frame = player_right[self.animation_index % len(player_right)]
+            current_frame = George_right[self.animation_index % len(George_right)]
+
+
+
+
         else:
-            current_frame = player_left[self.animation_index % len(player_left)]
-        surface.blit(current_frame, (screen_x, screen_y))
+            #current_frame = player_left[self.animation_index % len(player_left)]
+            current_frame = George_left[self.animation_index % len(George_right)]
+
+
+        surface.blit(current_frame, (screen_x+self.HITBOX_OFFSET_X, screen_y))
 
         if Debug:
             rect = self.get_rect()
@@ -526,7 +535,7 @@ def draw_level(surface, level_data, camera):
         surface.blit(money, (screen_x, screen_y))
     for x, y in level_data["buttons"]:
         screen_x, screen_y = camera.apply(x, y)
-        surface.blit(button, (screen_x, screen_y))
+        surface.blit(button0, (screen_x, screen_y))
     for x, y in level_data["spikes"]:
         screen_x, screen_y = camera.apply(x, y)
         surface.blit(spikes, (screen_x, screen_y))
@@ -1172,9 +1181,8 @@ setting = pygame.image.load("images/setting.png").convert_alpha()
 us_uk_flag = pygame.image.load("images/US_UK_flag.png").convert_alpha()
 ru_flag = pygame.image.load("images/RU_flag.jpg").convert_alpha()
 label_MM = pygame.image.load("images/label.png").convert_alpha()
-plus = pygame.image.load("images/plus.jpg").convert_alpha()
-trashcan = pygame.image.load("images/trashcan.jpg").convert_alpha()
-copy_folder = pygame.image.load("images/folder.jpg").convert_alpha()
+plus = pygame.image.load("images/plus.png").convert_alpha()
+trashcan = pygame.image.load("images/trashcan.png").convert_alpha()
 open_CL = pygame.image.load("images/open_CL.png").convert_alpha()
 
 one = pygame.image.load("level signs/1.png").convert_alpha()
@@ -1190,19 +1198,14 @@ white.fill((255, 255, 255))
 white_hb = white.get_rect()
 white_hb.center = (640 // 2, 360 // 2)
 # Load textures
-player_texture = pygame.image.load("images/player.png").convert_alpha()  # игрок
-enemy = pygame.image.load("images/enemy.png").convert_alpha()  # враг
-wall = pygame.image.load("images/brickwall.jpg").convert_alpha()  # стена
+player_texture = pygame.image.load("images/player.png").convert_alpha()
+wall = pygame.image.load("images/brickwall.jpg").convert_alpha()
 every_platform = pygame.image.load("images/platform.jpg").convert_alpha()
 spikes = pygame.image.load("images/spikes.png").convert_alpha()
-money = pygame.image.load("images/money.png")
-door = pygame.image.load("images/door.png")
-cp0 = pygame.image.load("images/checkpoint0.png").convert_alpha()
-cp1 = pygame.image.load("images/checkpoint1.png").convert_alpha()
-start_end = pygame.image.load("images/startend.png").convert_alpha()
-chest = pygame.image.load("images/chest.png").convert_alpha()
-FAK = pygame.image.load("images/FAK.png").convert_alpha()  # First aid kit
-button = pygame.image.load("images/button0.png").convert_alpha()
+money = pygame.image.load("images/coin.png")
+button0 = pygame.image.load("images/button0.png").convert_alpha()
+button1 = pygame.image.load("images/button1.png").convert_alpha()
+
 
 # Load player textures
 player_right = [
@@ -1217,6 +1220,41 @@ player_left = [
     pygame.image.load('pleft/sprite_11.png').convert_alpha(),
     pygame.image.load('pleft/sprite_12.png').convert_alpha()
 ]
+
+Karen_right = [
+    pygame.image.load("Karen/right/assets/1.png"),
+    pygame.image.load("Karen/right/assets/2.1.png"),
+    pygame.image.load("Karen/right/assets/2.2.png"),
+    pygame.image.load("Karen/right/assets/3.png"),
+    pygame.image.load("Karen/right/assets/4.1.png"),
+    pygame.image.load("Karen/right/assets/4.2.png")
+]
+
+Karen_left = [
+    pygame.image.load("Karen/left/assets/1.png"),
+    pygame.image.load("Karen/left/assets/2.1.png"),
+    pygame.image.load("Karen/left/assets/2.2.png"),
+    pygame.image.load("Karen/left/assets/3.png"),
+    pygame.image.load("Karen/left/assets/4.1.png"),
+    pygame.image.load("Karen/left/assets/4.2.png")
+]
+
+George_right = [
+    pygame.image.load("Geoge/right/1.png"),
+    pygame.image.load("Geoge/right/2.png"),
+    pygame.image.load("Geoge/right/3.png"),
+    pygame.image.load("Geoge/right/4.png"),
+    pygame.image.load("Geoge/right/5.png")
+]
+
+George_left = [
+    pygame.image.load("Geoge/left/1.png"),
+    pygame.image.load("Geoge/left/2.png"),
+    pygame.image.load("Geoge/left/3.png"),
+    pygame.image.load("Geoge/left/4.png"),
+    pygame.image.load("Geoge/left/5.png")
+]
+
 # Create simple figures
 Start_button = pygame.rect.Rect((270, 130, 100, 50))  # Start button
 setting_rect = pygame.rect.Rect((580, 300, 60, 60))
@@ -1246,7 +1284,8 @@ while running:
 
     if not gameplay:
         # Draw the main menu
-        screen.fill((37, 150, 190))
+        screen.blit(level_bg, (0, 0))
+        #screen.fill((37, 150, 190))
 
         # Create a start button
         screen.blit(label_MM, (270, 130))
@@ -1564,9 +1603,10 @@ while running:
                         death_flag = 0
                         coin = 0
                         # timer = 0
-            elif event.button == 4:  # Wheel up
+
+            elif event.button == 4 and my_levels:  # Wheel up
                 scroll_y = max(0, scroll_y - scroll_speed)
-            elif event.button == 5:  # Wheel down
+            elif event.button == 5 and my_levels:  # Wheel down
                 scroll_y = min(scroll_y + scroll_speed, max_scroll)
 
     # Scroll with keyboard arrows
