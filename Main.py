@@ -1208,18 +1208,6 @@ button1 = pygame.image.load("images/button1.png").convert_alpha()
 
 
 # Load player textures
-player_right = [
-    pygame.image.load('pright/sprite_13.png').convert_alpha(),
-    pygame.image.load('pright/sprite_14.png').convert_alpha(),
-    pygame.image.load('pright/sprite_15.png').convert_alpha(),
-    pygame.image.load('pright/sprite_16.png').convert_alpha()
-]
-player_left = [
-    pygame.image.load('pleft/sprite_9.png').convert_alpha(),
-    pygame.image.load('pleft/sprite_10.png').convert_alpha(),
-    pygame.image.load('pleft/sprite_11.png').convert_alpha(),
-    pygame.image.load('pleft/sprite_12.png').convert_alpha()
-]
 
 Karen_right = [
     pygame.image.load("Karen/right/assets/1.png"),
@@ -1240,19 +1228,19 @@ Karen_left = [
 ]
 
 George_right = [
-    pygame.image.load("Geoge/right/1.png"),
-    pygame.image.load("Geoge/right/2.png"),
-    pygame.image.load("Geoge/right/3.png"),
-    pygame.image.load("Geoge/right/4.png"),
-    pygame.image.load("Geoge/right/5.png")
+    pygame.image.load("George/right/1.png"),
+    pygame.image.load("George/right/2.png"),
+    pygame.image.load("George/right/3.png"),
+    pygame.image.load("George/right/4.png"),
+    pygame.image.load("George/right/5.png")
 ]
 
 George_left = [
-    pygame.image.load("Geoge/left/1.png"),
-    pygame.image.load("Geoge/left/2.png"),
-    pygame.image.load("Geoge/left/3.png"),
-    pygame.image.load("Geoge/left/4.png"),
-    pygame.image.load("Geoge/left/5.png")
+    pygame.image.load("George/left/1.png"),
+    pygame.image.load("George/left/2.png"),
+    pygame.image.load("George/left/3.png"),
+    pygame.image.load("George/left/4.png"),
+    pygame.image.load("George/left/5.png")
 ]
 
 # Create simple figures
