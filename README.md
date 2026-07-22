@@ -124,8 +124,6 @@ JumpOverlord/                     # Project root folder
 ## 🙏 Thanks
 - Python, Pygame
 - Google Fonts (Open Sans)
-- Flaticon, Iconfinder
-- Various free sources (Pinterest, etc.)
 
 ## License
 **MIT** — free to use, modify, and share.  

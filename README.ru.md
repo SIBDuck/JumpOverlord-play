@@ -127,8 +127,6 @@ JumpOverlord/                     # Корневая папка проекта
 ## 🙏 Спасибо
 - Python, Pygame
 - Google Fonts (Open Sans)
-- Flaticon, Iconfinder
-- Различным бесплатным источникам (Pinterest, и др.)
 
 ## Лицензия
 **MIT** — бесплатно использовать, модифицировать, распространять.  
