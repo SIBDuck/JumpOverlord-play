@@ -288,8 +288,8 @@ def reset_level(level_path):
 
 
 class Player:
+    # Initialize player attributes and physics parameters
     def __init__(self, x, y):
-        # Initialize player attributes and physics parameters
         self.x = x
         self.y = y
         self.width = 32  # hitbox width
@@ -323,9 +323,8 @@ class Player:
     # Get player's hitbox:
     def get_rect(self):
         return pygame.Rect(self.x - self.HITBOX_OFFSET_X, self.y, self.width, self.height)
-        # We subtract "self.HITBOX_OFFSET_X" because of the unknown mistake
-
-
+        # Subtraction because of aligning the physical hitbox relative to the visual sprite dimensions
+    # Player movement and animation
     def move(self, keys, level_data):
         global gameplay, death, is_jump, is_go, coin, complete
         old_x = self.x  # Store current X coordinate for collision resolution
@@ -433,7 +432,6 @@ class Player:
             self.vy = self.jump_power
             self.coyote_time = 0
             self.jump_buffer = 0
-
     def ground_check(self, level_data):
         player_rect = self.get_rect()
         # Create ground detector rectangle
@@ -460,25 +458,18 @@ class Player:
                 self.y = old_y
                 self.vy = 0  # Stop falling (encountered an obstacle)
                 break
-
-    def draw(self, surface, camera_x, camera_y):  # Draw player function
+    # Draw player
+    def draw(self, surface, camera_x, camera_y):
         screen_x = self.x - camera_x - self.width // 2  # Calculate screen player X coordinate
         screen_y = self.y - camera_y - self.SPRITE_OFFSET_Y  # Calculate screen player Y coordinate
 
         if self.direction == "right":
-            #current_frame = player_right[self.animation_index % len(player_right)]
             current_frame = George_right[self.animation_index % len(George_right)]
 
-
-
-
         else:
-            #current_frame = player_left[self.animation_index % len(player_left)]
             current_frame = George_left[self.animation_index % len(George_right)]
-
-
         surface.blit(current_frame, (screen_x+self.HITBOX_OFFSET_X, screen_y))
-
+        # Initialize debug mode
         if Debug:
             rect = self.get_rect()
             # Red player hitbox
@@ -503,6 +494,7 @@ class Player:
 
 
 class Camera:
+    # Initialize camera
     def __init__(self):
         # Initialize camera viewport matching screen dimensions
         self.x = 0  # Camera coordinate X in the game world
