@@ -5,7 +5,6 @@
 
 
 # Constants are written in CapsLock
-#from operator import truediv
 
 import pygame
 import json
@@ -510,43 +509,44 @@ class Camera:
     def apply(self, x, y):  # Convert world coordinates into screen ones
         return x - self.x, y - self.y
 
+# Function for detecting objects appearing on the screen
+def is_visible(sx, sy):
+    return -TILE_SIZE <= sx <= SCREEN_WIDTH and -TILE_SIZE <= sy <= SCREEN_HEIGHT
 
 def draw_level(surface, level_data, camera):
-    # TODO: add more objects
     for x, y in level_data["walls"]:
+        # Calculate object's coordinates
         screen_x, screen_y = camera.apply(x, y)
-        surface.blit(wall, (screen_x, screen_y))
+        if is_visible(screen_x, screen_y):
+            # Draw it on the screen with their coordinates respectively
+            surface.blit(wall, (screen_x, screen_y))
+            # Draw hitboxes in debug mode
+            if Debug:
+                pygame.draw.rect(surface, (255, 0, 0), (screen_x, screen_y, TILE_SIZE, TILE_SIZE), 2)
     for x, y in level_data["platforms"]:
         screen_x, screen_y = camera.apply(x, y)
-        surface.blit(every_platform, (screen_x, screen_y))
+        if is_visible(screen_x, screen_y):
+            surface.blit(every_platform, (screen_x, screen_y))
+            if Debug:
+                pygame.draw.rect(surface, (255, 0, 0), (screen_x, screen_y, TILE_SIZE, TILE_SIZE), 2)
     for x, y in level_data["money"]:
         screen_x, screen_y = camera.apply(x, y)
-        surface.blit(money, (screen_x, screen_y))
+        if is_visible(screen_x, screen_y):
+            surface.blit(money, (screen_x, screen_y))
+            if Debug:
+                pygame.draw.rect(surface, (255, 0, 0), (screen_x, screen_y, TILE_SIZE // 2, TILE_SIZE // 2), 2)
     for x, y in level_data["buttons"]:
         screen_x, screen_y = camera.apply(x, y)
-        surface.blit(button0, (screen_x, screen_y))
+        if is_visible(screen_x, screen_y):
+            surface.blit(button0, (screen_x, screen_y))
+            if Debug:
+                pygame.draw.rect(surface, (255, 0, 0), (screen_x, screen_y, TILE_SIZE // 2, TILE_SIZE // 2), 2)
     for x, y in level_data["spikes"]:
         screen_x, screen_y = camera.apply(x, y)
-        surface.blit(spikes, (screen_x, screen_y))
-    if Debug:
-        # Show objects' hitboxes
-        for x, y in level_data["walls"]:
-            screen_x, screen_y = camera.apply(x, y)
-            wall_hb = pygame.rect.Rect(screen_x, screen_y, TILE_SIZE, TILE_SIZE)
-            pygame.draw.rect(surface, (255, 0, 0), wall_hb, 2)
-        for x, y in level_data["platforms"]:
-            screen_x, screen_y = camera.apply(x, y)
-            plat_hb = pygame.rect.Rect(screen_x, screen_y, TILE_SIZE, TILE_SIZE)
-            pygame.draw.rect(surface, (0, 0, 255), plat_hb, 2)
-        for x, y in level_data["spikes"]:
-            screen_x, screen_y = camera.apply(x, y)
-            spike_hb = pygame.rect.Rect(screen_x, screen_y, TILE_SIZE, TILE_SIZE // 2)
-            pygame.draw.rect(surface, (255, 0, 0), spike_hb, 2)
-        for x, y in level_data["money"]:
-            screen_x, screen_y = camera.apply(x, y)
-            coin_hb = pygame.rect.Rect(screen_x, screen_y, TILE_SIZE // 2, TILE_SIZE // 2)
-            pygame.draw.rect(surface, (255, 0, 0), coin_hb, 2)
-
+        if is_visible(screen_x, screen_y):
+            surface.blit(spikes, (screen_x, screen_y))
+            if Debug:
+                pygame.draw.rect(surface, (255, 0, 0), (screen_x, screen_y, TILE_SIZE, TILE_SIZE // 2), 2)
 
 def change_lan():
     global start_button, levels_label, confirm_exit_label, yes, no, settings_label, my_levels_label, custom_levels_label
