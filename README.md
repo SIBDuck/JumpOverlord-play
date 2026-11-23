@@ -5,9 +5,6 @@ Read this in other languages: [Russian/Русский](README.ru.md)
 
 Read full documentation: [Documentation](project_text.md)
 
-This is the active development branch. Check the educational one: [Repository](https://github.com/SIBDuck/JumpOverlord/)
-
-
 - **Two playable levels** (more coming soon)
 - **Dual language** - English and Russian
 
